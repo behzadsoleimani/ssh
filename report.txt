@@ -1,0 +1,51 @@
+Report on Interview Assignment
+--------
+
+Frontend Development
+--------
+
+- I began by thoroughly reviewing the provided documentation to
+understand the project's requirements.
+
+- To ensure a smooth development process, I set up Docker and read
+the Swagger documentation for a clearer grasp of the API's functionality.
+
+- With a solid understanding of the project scope, I proceeded to create
+the necessary HTML and JS files for implementation.
+
+- Utilizing JSDoc comments helped me maintain code quality, ensure type
+safety, and enhance the readability of my JS code. Additionally,
+I enriched the project by incorporating extra styles and functionalities.
+
+
+Observations
+---------
+
+- In the game.py file, I identified an issue within the _check_winning_conditions
+method, notably when a win condition occurs on the last move. Specifically, the
+condition `if self.board.count('-') == 0:` was positioned above WIN_CONDITIONS
+checks. Although uncertain about these modifications without confirmation,
+I fixed it.
+
+- There are several options to serve index.html, however I added a line
+of code at the beginning of server.py, enabling it to be served from the "/" path.
+
+
+Suggestions
+---------
+
+- Implementing a confirmation dialog when starting a new game while a game is
+already in progress.
+
+- Allowing players to enter their names before starting the game.
+
+- Keeping track of the number of wins for each player across multiple games.
+
+- An undo button that allows players to take back their last move.
+
+- Offering different difficulty levels for players to choose.
+
+- Enhancing the UX with animations and sound effects.
+
+
+* Feedback is appreciated.

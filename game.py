@@ -90,11 +90,6 @@ class Game(object):
     def _check_winning_conditions(self):
         # Check if someone won the game.
 
-        if self.board.count('-') == 0:
-            # No moves left
-            self.status = 'DRAW'
-            return
-
         board = list(self.board)
         for cond in WIN_CONDITIONS:
             marks = []
@@ -108,7 +103,12 @@ class Game(object):
                     self.status = 'X_WON'
                 else:
                     self.status = 'O_WON'
-                break
+                return
+
+        if self.board.count('-') == 0:
+            # No moves left
+            self.status = 'DRAW'
+
 
     def get_json(self):
         return json.dumps(

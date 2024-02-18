@@ -6,8 +6,12 @@ import game
 import errors
 from store import store_instance
 
+app = Flask('ssh-test-application', static_url_path='')
 
-app = Flask('ssh-test-application')
+#  serves the index.html file at the root URL.
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
 
 
 @app.route('/api/v1/games', methods=['GET', 'POST'])

@@ -1,0 +1,113 @@
+:root {
+  --color-primary: #f2c14e;
+  --color-secondary: #b37b00c4;
+  --color-neutral: #333;
+  --color-accent-pink: #ef908c;
+  --color-accent-purple: #8c90ef;
+  --color-background-hover: #f2c14e69;
+  --color-box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell {
+  width: 6rem;
+  height: 6rem;
+  border: 2px solid var(--color-secondary);
+  text-align: center;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+}
+
+.cell:hover {
+  background-color: var(--color-background-hover);
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-neutral);
+  border-color: var(--color-primary);
+  font-weight: 600;
+  width: 10rem;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--color-secondary);
+}
+
+.status {
+  padding: 1rem;
+  font-size: 2.2rem;
+  min-height: 2.5rem;
+  color: var(--color-neutral);
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  place-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 0 1rem var(--color-box-shadow);
+}
+
+#footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mark-x::after,
+.mark-x::before,
+.mark-o::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  height: 12px;
+  border-radius: 6px;
+  transform-origin: center;
+}
+
+.mark-x::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background: var(--color-accent-purple);
+}
+
+.mark-x::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--color-accent-purple);
+}
+
+.mark-o::before {
+  height: 80%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 12px var(--color-accent-pink);
+  transform: translate(-50%, -50%);
+}
+
+
+@media only screen and (max-width: 768px) {
+  #footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
